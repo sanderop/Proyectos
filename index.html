@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Encriptador</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <style> @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@300&display=swap'); </style>
+    </head>
+    
+    <body>
+        <header>
+            <h1><img id="logo-top" src="imagenes/Logo.svg" alt="Logo de Alura"></h1>
+        </header>
+
+        <main>
+            <section class="ingresar-texto">
+                <textarea id="texto" placeholder="Ingrese el texto aqui"></textarea>
+            </section>
+               
+            <section class="frame-advertencia">
+                <img id="exclamation-circle" src="imagenes/exclamation-circle-fill.svg"><p class="advertencia">Solo letras minúsculas y sin acentos</p>
+            </section>
+
+            <section class="botones"> 
+
+                <input type="button" id="boton-encriptar" value="Encriptar">
+                <input type="button" id="boton-desencriptar" value="Desencriptar">
+
+            </section>
+
+            <section class="cuadro-desencriptado">
+                <div id="rectangulo-texto"><img id="imagen-rectangulo" src="imagenes/Munheco.svg">
+                    <div id="mensaje-rectangulo">
+                        <p id="alerta">Ningún mensaje fue encontrado</p>
+                        <p id="recomendacion">Ingresa el texto que desees encriptar o desencriptar</p>
+                    </div>
+                    <div id="texto-procesado"></div>
+                    
+                </div>
+                <input type="button" id="boton-copiar" value="Copiar">
+            </section>
+
+        </main>
+    
+
+
+        <script>
+            /* Encriptador */
+            function encriptar() {
+                var oracion = mensajeCapturado.value.split('');
+                var encriptado = [];
+                var i = 0;
+        
+                while (i < oracion.length) {
+                    var letra = oracion[i];
+                    var vocal = ["a", "e", "i", "o", "u"];
+                    var consonante = false;
+                    console.log(letra);
+        
+        
+                    for (var posicion; posicion <= encriptado.length; posicion++){
+                        if (letra != vocal[posicion]) {
+                            consonante = true;
+                            break;
+                        }
+        
+                    }
+        
+                    if (consonante == false){
+                        if (letra == "a"){
+                            letra = "ai";
+                        }
+        
+                        if (letra == "e"){
+                            letra = "enter"
+                        }
+        
+                        if (letra == "i"){
+                            letra = "imes";
+                        }
+        
+                        if (letra == "o"){
+                            letra = "ober";
+                        }
+        
+                        if (letra == "u"){
+                            letra = "ufat";
+                        } 
+                        
+                    }
+        
+                    encriptado.push(letra);
+                    i = i + 1;
+        
+                }
+        
+                var oracionFinal = encriptado.join("");
+        
+                if(mensajeCapturado != ''){
+                    document.getElementById("imagen-rectangulo").setAttribute("style", "visibility: hidden");
+                    document.getElementById("mensaje-rectangulo").setAttribute("style", "visibility: hidden");
+                    document.getElementById("boton-copiar").style.visibility =  "visible";
+                    mostrarMensaje(oracionFinal);
+                }
+        
+                return oracionFinal;
+            }
+        
+            /*Desencriptar*/
+            function desencriptar(){
+                var oracion = mensajeCapturado.value.split(' ');
+                var desencriptado = [];
+                var i = 0;
+                
+                var palabra = oracion[i];
+                var j = 0
+        
+                console.log("oración inicial " + oracion)
+        
+                while(i < oracion.length){
+                    var encriptacion = ['ai','enter', 'imes','ober','ufat' ];
+                    var continuar = true;
+                    console.log("oración " + palabra)
+        
+                    if (palabra.includes(encriptacion[j]) == false){
+                        j = j+1;
+                    }
+                                    
+                    if (continuar == true){
+        
+                        if (palabra.includes("ai")){
+                            palabra = palabra.replace("ai", 'a') ;
+                        }
+        
+                        if (palabra.includes("enter")){
+                            palabra = palabra.replace('enter', "e");
+                        }
+        
+                        if (palabra.includes("imes")){
+                            palabra = palabra.replace('imes', "i");
+                        }
+        
+                        if (palabra.includes("ober")){
+                            palabra = palabra.replace('ober', "o");
+                        }
+        
+                        if (palabra.includes("ufat")){
+                            palabra = palabra.replace('ufat', "u");
+                        } 
+                    }
+        
+                    if ((j > 3) && (palabra.includes(encriptacion[j]) == false)){ 
+                        continuar = false; 
+                        i = i+1;
+                        desencriptado.push(palabra);
+                        palabra = oracion[i];
+                        j = 0;
+                    }
+        
+                }
+        
+                var fraseFinal = desencriptado.join(" ");
+        
+                if(mensajeCapturado != ''){
+                    document.getElementById("imagen-rectangulo").setAttribute("style", "visibility: hidden");
+                    document.getElementById("mensaje-rectangulo").setAttribute("style", "visibility: hidden");
+                    document.getElementById("boton-copiar").style.visibility =  "visible";
+                    mostrarMensaje(fraseFinal);
+                }
+        
+                return fraseFinal;
+            }
+        
+            var mensajeCapturado = document.getElementById("texto");
+        
+            var botonEncriptar = document.querySelector("#boton-encriptar");
+            botonEncriptar.onclick = encriptar;
+
+            var botonDesencriptar = document.querySelector("#boton-desencriptar");
+            botonDesencriptar.onclick = desencriptar;
+
+            var botonCopiar = document.querySelector("#boton-copiar");
+            botonCopiar.onclick = copiarMensaje;
+        
+            /*mensaje*/
+            function mostrarMensaje(texto){
+                document.getElementById("texto-procesado").innerHTML = texto;
+            }
+
+            /*copiar mensaje*/
+            function copiarMensaje(){
+                var aux = document.createElement("input");
+                aux.setAttribute("value", document.getElementById("texto-procesado").innerHTML);
+                document.body.appendChild(aux);
+                aux.select();
+                document.execCommand("copy");
+                document.body.removeChild(aux);
+            }
+        
+        
+        </script>
+    </body>
+    
+</html>
+
