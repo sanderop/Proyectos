@@ -1,36 +1,47 @@
 body{
-    position: relative;
-    width: 1440px;
-    height: 1024px;
-
     background-color: #F3F5FC;
+    min-height: 100vh;
+    margin: 0 auto;
 }
 
-header{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 40px;
-    
-    position: absolute;
-    width: 120px;
-    height: 48px;
+main{
+    width: 1440px;
+    margin: 0 auto;
+    min-height: 100vh;
+
+}
+
+#logo-top{
+    display: inline-block;
+    margin: 0 auto;
+    vertical-align: top;
     left: 40px;
-    top: 40px;    
+    top: 40px;
+    position: relative;
+}
+
+.izquierda{
+    position: relative;
+    top: 112px;
+    left: 40px;
+    display: inline-block;
+    margin: 0 80px;
+}
+
+.ingresar-texto{
+    margin: 0 auto;
+    left: 240px;
+    top: 168px;
+    margin: 0 0 1em;
 }
 
 #texto{
-
     background: #F3F5FC;
     border: none;
     outline: none;
 
-    position: absolute;
-    width: 680px;
-    height: 670px;
-    left: 240px;
-    top: 168px;
+    width: 650px;
+    height: 680px;
 
     font-family: 'Inter';
     font-style: normal;
@@ -38,7 +49,6 @@ header{
     font-size: 32px;
     line-height: 150%;
     color: #0A3871;
-
 }
 
 ::placeholder{
@@ -48,23 +58,21 @@ header{
 }
 
 .frame-advertencia{
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
     align-items: center;
     padding: 0px;
     gap: 8px;
 
-    position: absolute;
     width: 229px;
-    height: 18px;
-    left: 240px;
-    top: 851px;
+
+    margin: 0 0 1em;
 }
 
-.exclamation-circle{
+#exclamation-circle{
     width: 16px;
     height: 16px;
-    background: #495057;
+    vertical-align: top;
+    display: inline-block;
 
 }
 
@@ -88,17 +96,13 @@ header{
 }
 
 .botones{
-    display: flex;
-    flex-direction: row;
     align-items: flex-start;
     padding: 0px;
     gap: 24px;
 
-    position: absolute;
     width: 680px;
     height: 67px;
-    left: 240px;
-    top: 885px;
+
 }
 
 #boton-encriptar{
@@ -165,58 +169,56 @@ header{
 }
 
 .cuadro-desencriptado{
-    position: fixed;
+    display: inline-block;
     width: 400px;
     height: 944px;
-    left: 1000px;
+    position: relative;
     top: 40px;
+    margin: 0 auto;
 
     background: #FFFFFF;
 
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    border-radius: 32px;
+    border-radius: 32px;  
 }
 
 #imagen-rectangulo{   
 
-    position: fixed;
+    position: absolute;
     width: 336px;
     height: 304px;
-    left: 1032px;
-    top: 283px;
+    left: 32px;
+    top: 243px;
 }
 
 #mensaje-rectangulo{
 
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
     gap: 16px;
 
     width: 336px;
     height: 122px;
-    left: 1032px;
-    top: 619px;
+    left: 32px;
+    top: 579px;
 }
 
 #texto-procesado{
     
     box-sizing: content-box;
     overflow-y: scroll;
-    position: fixed;
+    position: relative;
     width: 340px;
-    height: 771px;
-    left: 1040px;
-    top: 82px;
+    height: 781px;
+    top: 32px;
+    margin: auto;
 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 150%;
-
 
     color: #495057;
 }
@@ -264,7 +266,7 @@ header{
 
 #boton-copiar{
 
-    position: fixed;
+    position: relative;
     align-items: flex-start;
     box-sizing: border-box;
     padding: 0px;
@@ -272,8 +274,9 @@ header{
     
     width: 336px;
     height: 67px;
-    left: 1042px;
-    top: 890px;
+    top: 70px;
+    left: 32px;
+
     
     border: 1px solid #0A3871;
     border-radius: 24px; 
@@ -312,21 +315,21 @@ main p:not(#missao) {} ------- todos los elementos excepto...
 
 @media screen and (max-width:375px) {
 
-    body{
-        width: 375px;
-        height: 933px;
+    main{
+        width: 375px;   
     }
 
-    header{
-        width: 375px;
-        height: 96px;
-        left: 0px;
-        top: 0px;
+    #logo-top{
+        left: 40px;
+        top: 73.42px;
+    }
+
+    .izquierda{
+        top: 56px;
+        left: 32px;
     }
 
     #texto {
-        box-sizing: content-box;
-        position: absolute;
         width: 343px;
         height: 275px;
         left: 16px;
@@ -352,8 +355,6 @@ main p:not(#missao) {} ------- todos los elementos excepto...
     }
 
     .cuadro-desencriptado{
-        box-sizing:content-box;
-        position: absolute;
         width: 327px;
         height: 200px;
         left: 24px;
@@ -416,28 +417,24 @@ main p:not(#missao) {} ------- todos los elementos excepto...
 
 @media screen and (max-width:768px) {
 
-    body{
-        position: relative;
-        width: 768px;
-        height: 1174px;
+    main{
+        width: 768px;   
     }
 
-    header{
-        position: relative;
-        width: 31.09px;
-        height: 50.58px;
+    #logo-top{
         left: 40px;
         top: 73.42px;
     }
 
-    #texto {
-        box-sizing: content-box;
-        position: absolute;
-        width: 688px;
-        height: 550px;
-        left: 40px;
-        top: 240px;
+    .izquierda{
+        top: 116px;
+        left: 80px;
+        display: unset;
+    }
 
+    #texto {
+        width: 688px;
+        height: 583px;
     }
 
     .frame-advertencia {
@@ -451,6 +448,7 @@ main p:not(#missao) {} ------- todos los elementos excepto...
         height: 67px;
         left: 40px;
         top: 870px;
+        display: flex;
     }
 
     #imagen-rectangulo{
@@ -458,12 +456,11 @@ main p:not(#missao) {} ------- todos los elementos excepto...
     }
 
     .cuadro-desencriptado{
-        box-sizing:content-box;
-        position: absolute;
+        display: block;
         width: 688px;
         height: 250px;
         left: 40px;
-        top: 1001px;
+        top: 128px;
     }
 
     #mensaje-rectangulo{

@@ -6,32 +6,36 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Encriptador</title>
+        <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@300&display=swap" rel="stylesheet">
         <style> @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@300&display=swap'); </style>
     </head>
     
     <body>
-        <header>
-            <h1><img id="logo-top" src="imagenes/Logo.svg" alt="Logo de Alura"></h1>
-        </header>
 
         <main>
-            <section class="ingresar-texto">
-                <textarea id="texto" placeholder="Ingrese el texto aqui"></textarea>
+            <img id="logo-top" src="imagenes/Logo.svg" alt="Logo de Alura">
+
+            <section class="izquierda">
+                <div class="ingresar-texto">
+                    <textarea id="texto" placeholder="Ingrese el texto aqui"></textarea>
+                </div>
+                   
+                <div class="frame-advertencia">
+                    <img id="exclamation-circle" src="imagenes/exclamation-circle-fill.svg"><p class="advertencia">Solo letras minúsculas y sin acentos</p>
+                </div>
+    
+                <div class="botones"> 
+    
+                    <input type="button" id="boton-encriptar" value="Encriptar">
+                    <input type="button" id="boton-desencriptar" value="Desencriptar">
+    
+                </div>
+  
+
             </section>
-               
-            <section class="frame-advertencia">
-                <img id="exclamation-circle" src="imagenes/exclamation-circle-fill.svg"><p class="advertencia">Solo letras minúsculas y sin acentos</p>
-            </section>
-
-            <section class="botones"> 
-
-                <input type="button" id="boton-encriptar" value="Encriptar">
-                <input type="button" id="boton-desencriptar" value="Desencriptar">
-
-            </section>
-
+            
             <section class="cuadro-desencriptado">
                 <div id="rectangulo-texto"><img id="imagen-rectangulo" src="imagenes/Munheco.svg">
                     <div id="mensaje-rectangulo">
