@@ -300,19 +300,6 @@ main{
 
 
 
-/*section > p ------ referencia a los hijos (párrafos) siguientes de section
-
-p + h2 ------------- h2 del mismo nivel de section (también se refiere al primer h2 del p)
-
-section ~ p -------- todos los parrafos en section
-
-main p:not(#missao) {} ------- todos los elementos excepto...
-*/
-
-
-/* width: calc(40% - (25px))  ----- función calc para realizar cálculos en tamaños, por ejemplo*/
-
-
 @media screen and (max-width:375px) {
 
     main{
