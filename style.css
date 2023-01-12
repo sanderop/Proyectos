@@ -8,7 +8,6 @@ main{
     width: 1440px;
     margin: 0 auto;
     min-height: 100vh;
-
 }
 
 #logo-top{
@@ -39,10 +38,8 @@ main{
     background: #F3F5FC;
     border: none;
     outline: none;
-
     width: 650px;
     height: 680px;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -62,9 +59,7 @@ main{
     align-items: center;
     padding: 0px;
     gap: 8px;
-
     width: 229px;
-
     margin: 0 0 1em;
 }
 
@@ -73,23 +68,18 @@ main{
     height: 16px;
     vertical-align: top;
     display: inline-block;
-
 }
 
 .advertencia{
     width: 205px;
     height: 18px;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 150%;
-
     color: #495057;
-
     opacity: 0.8;
-
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -99,26 +89,20 @@ main{
     align-items: flex-start;
     padding: 0px;
     gap: 24px;
-
     width: 680px;
     height: 67px;
-
 }
 
 #boton-encriptar{
     box-sizing: border-box;
     padding: 24px;
     gap: 8px;
-
     width: 328px;
     height: 67px;
-
-
     background: #0A3871;
     border-radius: 24px;
 
-    /*Text*/
- 
+    /*Text*/ 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -131,7 +115,6 @@ main{
     flex-grow: 1;
 
     transition: 1s all;
-
     cursor: pointer;
 }
 
@@ -143,10 +126,8 @@ main{
     box-sizing: border-box;
     padding: 24px;
     gap: 8px;
-
     width: 328px;
     height: 67px;
-
     background: #D8DFE8;
     border: 1px solid #0A3871;
     border-radius: 24px;
@@ -164,7 +145,6 @@ main{
     flex-grow: 1;
 
     transition: 1s all;
-
     cursor: pointer;
 }
 
@@ -175,15 +155,12 @@ main{
     position: relative;
     top: 40px;
     margin: 0 auto;
-
     background: #FFFFFF;
-
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;  
 }
 
 #imagen-rectangulo{   
-
     position: absolute;
     width: 336px;
     height: 304px;
@@ -192,34 +169,30 @@ main{
 }
 
 #mensaje-rectangulo{
-
     position: absolute;
     display: flex;
     flex-direction: column;
     gap: 16px;
-
     width: 336px;
     height: 122px;
     left: 32px;
     top: 579px;
 }
 
-#texto-procesado{
-    
+#texto-procesado{   
     box-sizing: content-box;
     overflow-y: scroll;
+    overflow-y: hidden;
     position: relative;
     width: 340px;
     height: 781px;
     top: 32px;
     margin: auto;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 150%;
-
     color: #495057;
 }
 
@@ -227,17 +200,13 @@ main{
 #alerta{
     width: 336px;
     height: 58px;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 120%;
-
     text-align: center;
-
     color: #343A40;
-
     flex: none;
     order: 0;
     align-self: stretch;
@@ -247,17 +216,13 @@ main{
 #recomendacion{
     width: 336px;
     height: 48px;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-
     text-align: center;
-
     color: #495057;
-
     flex: none;
     order: 1;
     align-self: stretch;
@@ -265,19 +230,15 @@ main{
 }
 
 #boton-copiar{
-
     position: relative;
     align-items: flex-start;
     box-sizing: border-box;
     padding: 0px;
-    gap: 24px;
-    
+    gap: 24px; 
     width: 336px;
     height: 67px;
     top: 70px;
-    left: 32px;
-
-    
+    left: 32px; 
     border: 1px solid #0A3871;
     border-radius: 24px; 
 
@@ -293,9 +254,7 @@ main{
     transition: 1s all;
 
     cursor: pointer;
-
     visibility: hidden;
-
 }
 
 
@@ -321,7 +280,6 @@ main{
         height: 275px;
         left: 16px;
         top: 152px;
-
     }
 
     .frame-advertencia {
@@ -348,8 +306,7 @@ main{
         top: 707px;
     }
 
-    #mensaje-rectangulo{
-        
+    #mensaje-rectangulo{        
         position: relative;
         box-sizing:content-box;
         width: 263px;
@@ -450,8 +407,7 @@ main{
         top: 128px;
     }
 
-    #mensaje-rectangulo{
-        
+    #mensaje-rectangulo{        
         flex-direction: column;
         align-items: flex-start;
         padding: 1px;
@@ -463,7 +419,6 @@ main{
         top: 95px;
         margin: 0 auto;
         display: flex;
-
     }
 
     #texto-procesado{
