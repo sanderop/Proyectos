@@ -181,8 +181,6 @@ main{
 
 #texto-procesado{   
     box-sizing: content-box;
-    overflow-y: scroll;
-    overflow-y: hidden;
     position: relative;
     width: 340px;
     height: 781px;
